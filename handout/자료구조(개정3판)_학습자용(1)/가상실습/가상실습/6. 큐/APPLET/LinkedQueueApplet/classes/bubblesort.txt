@@ -1,0 +1,18 @@
+void enqueue(QueueType *q, element item)
+{ 
+  QueueNode *temp=(QueueNode *)malloc(sizeof(QueueNode)); 
+  if(temp == NULL )
+    error("memory error");
+  else {
+    temp->item = item; 		
+    temp->link = NULL; 		
+    if( is_empty(q) ){ 		
+      q->front = temp;
+      q->rear = temp; 	
+    }
+    else { 		
+      q->rear->link = temp;  
+      q->rear = temp; 
+    } 	
+  }
+}

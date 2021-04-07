@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=MS949">
+<title>
+HTML Test Page
+</title>
+</head>
+<body>
+<p align="center"><img src="images/Tree23_html_smartbutton1.gif" namo_npi=":EmbededNPI1" border="0"></p>
+<p align="center">
+<applet
+  codebase = "./"
+  code     = "Tree23.class"
+  name     = "TestApplet"
+  width    = "500"
+  height   = "400"
+  hspace   = "0"
+  vspace   = "0"
+  align    = "top"
+>
+</applet>
+</p>
+            <ul>
+                <li style="line-height:150%;">&quot;초기화&quot; 버튼은 애플릿을 
+    초기화시킨다. 현재 입력된 노드들을 전부 지운다.</li>
+                <li style="line-height:150%;">&quot;삽입&quot; 버튼은 2-3&nbsp;트리에 
+    숫자를 삽입할 때 사용된다. </li>
+            </ul>
+</body>
+<!--Namo WebEditor Data 4.0
+:EmbededNPI1
+ewYAAHhevVTPS1RRFP5eadkUJQoVI8qjXVFkFhbUYogCJYxIN65y6M0PsXkzzFxqJBfvH4hM
+IkSCBDcithBERxBGhMGVCwfauXPjOoigzes79703YylFT+nCmfu9c+75cc/9zqRsFQdgvD7B
+X67H8UzW7LVVIh9/roZfJjxtfVVPGmhDK07h+u+mUN/H6GUmbesy94+CVbqw1AhUiDPZO3Zg
+A2KsUGSclgeU2wbwFK7rwtAHfcft9VLVRGeoYo7CKZO9ZZv50dQEg8nlDreaSmpjsRL+PuwR
+28iK0irXx3KOH64cevcjjThySMDEjTDRrHf0+qbr6rbNF8PJu8RS5y/LncLyla9l5N5i7NI4
+Jh7GnsmZfAdpYvDB6TqiCiMHuVL3w4839kHYAtzbnMUW90HRe7YGAfvS7r+QTpVJFvVdnRIl
+tedQPV5NqR1eWQVWquPLYIkwoV5zlCeUdgpnqLUeLRqcEbBGH6eFEXxQ0zTAOUdTO00+qGka
+sXaWpiYhnoTXST3gmXBaTOcJroopAE6zroUBPcCAAYhxvhzX9XkT9cikiurRkZBpgDQqQpFK
+IQdWk+kN2/xHMr3vvaibcBCp/kIm/r9EIoBFDq5Ggd1P05DWTM98L+vXZRu4hSPTfXqm/41M
+8g4iHnH1pZWdnJSPnsHywurnvj3x/i+8wHRWkFIPG2WH0oEIunANN/nMper8iomhypkv5ZWf
+4feV0H==
+-->
+</html>

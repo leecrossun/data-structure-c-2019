@@ -1,0 +1,19 @@
+void shortest_path(int start, int n) 
+{  
+ int i, u, w;
+ for(i=0; i<n; i++) 
+ {
+   distance[i] = weight[start][i];
+   found[i] = FALSE;
+ }
+ found[start] = TRUE;   
+ distance[start] = 0;
+ for(i=0; i<n; i++){
+   u = choose(distance, n, found);
+   found[u] = TRUE;
+   for(w=0;w<n; w++)	
+     if(!found[w])
+        if( distance[u]+weight[u][w]<distance[w] )
+           distance[w] = distance[u]+weight[u][w];	
+ }
+}

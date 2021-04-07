@@ -1,0 +1,18 @@
+binsearch(int searchnum, int n)
+{
+ int left = 0;
+ int right = n-1;
+ int middle;
+ while( left <= right ){       
+   middle = (left+right)/2;
+   switch(compare(searchnum, list[middle])){
+     case '>':
+        left = middle+1; break;
+     case '<':
+        right = middle-1; break;
+     case '=':
+        return middle;
+   }
+ }
+ return -1;		
+}

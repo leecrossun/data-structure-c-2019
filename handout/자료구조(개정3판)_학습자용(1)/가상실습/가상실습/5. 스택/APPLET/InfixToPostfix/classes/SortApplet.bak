@@ -1,0 +1,54 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=MS949">
+<title>
+HTML Test Page
+</title>
+</head>
+<body>
+      <p align="center"><img src="images/SortApplet_html_smartbutton1.gif" namo_npi=":EmbededNPI1" border="0">
+<p><applet
+  codebase = "./"
+  code     = "SortApplet.class"
+  name     = "TestApplet"
+  width    = "700"
+  height   = "396"
+  hspace   = "0"
+  vspace   = "0"
+  align    = "middle"
+>
+</applet>
+</p>
+            <ul>
+                <li style="line-height:150%;">스택 연산의 종류를 선택합니다. 
+    </li>
+    <li style="line-height:150%;">삽입할 숫자를 입력난에 입력한 다음, 삽입 버튼을 
+    누르면 삽입 연산이 수행됩니다.</li>
+    <li style="line-height:150%;">삭제 버튼을 누르면 삭제&nbsp;연산이 수행됩니다.</li>
+                <li style="line-height:150%;">수행속도를 선택합니다.(숫자가 
+                높아질수록 속도가 빨라집니다.) 단계실행을 선택하면 버튼을 누를 
+                때마다 단계적으로 실행됩니다.</li>
+                <li style="line-height:150%;">스택의 크기를  선택합니다. 
+                화면의 크기 제한으로 인하여 16까지로 제한됩니다.</li>
+                <li style="line-height:150%;">시작 버튼을 누르면 스택 연산이 
+    시작됩니다.</li>
+                <li style="line-height:150%;">알고리즘 수행 도중에 수행 속도를 
+                다시 선택할 수 있습니다. </li>
+                <li style="line-height:150%;">알고리즘을 다시 수행시키고 싶을 
+                때는 정지 버튼을 누르고 다시 시작 버튼을 누르면 됩니다.</li>
+            </ul>
+</body>
+<!--Namo WebEditor Data 4.0
+:EmbededNPI1
+cwYAAHhevVRLSxtRFP7GN1S0KFSxKIN0UxFqQURwE9BCXdgKunGlsXmJZiLmoilkMUs3opVS
+SumitK4KLRQKRhAiQnCrQnftnxBEcDN+585M4iMoHcUDJ/ebe+553u8mbqkwACNdw1/Kq3Ay
+ZQ5bKroQfqNmFqPubkkOaw08Ri2eoP+yKdB3Bb3MmBV5yvWzYJVI/6wGCsTJVL/l24AQKxRd
+o2WIOm0Ar+E4Dgx90HP8u5s7NNETqJi7cEqmei1z4W18ncGkudtJXU7t/S4E74cz4hhZUULN
+j7CcytuVQ+8xJBDGPKIw8TxItMg7eh3ruvosc24mNkAsdV4Q5xM2u47yGF1FtnMN6y9Ck3Lm
+6BlpYvDC6Tqr0rPlXLl36sXLfhC2AHPZDRxwnZB911Yl4Eraqw3pVMlYRvdq56jxc4dK8Yqb
+2mEpku7wUsnDEmVCLd+po9R2KrtpLkVr888I2KGP3cQKPVDcqYLdSFM7TR4o7lRjp4GmOiGe
+hNdJXeCa8EBMjwi6xeQD+6GuhQFdwIA+CPF92Y7j8abNJZPKqME7IdM4aZSBIpUCPlhNphXe
+wrVkej/cqodQjlQ3kEn+XygRcrCeaTKry4aM5su3k7xmD8fAJRCZ0EnPxP+RSe5B1CWublpZ
+sY/y8XIi/2v7x8i5ePcLW2RMfkr92KhfqR2k/8buv30TU4X6P/mtM7VQkzV=
+-->
+</html>

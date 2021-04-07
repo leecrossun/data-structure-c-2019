@@ -1,0 +1,13 @@
+void push(Dstack *s, element item)
+{ 
+     StackNode *temp=(StackNode *)malloc(sizeof(StackNode));
+     if( temp == NULL ){
+        fprintf(stderr, "memory error\n");
+        return;
+     }
+     else{
+        temp->item = item;
+        temp->link = s->top;
+        s->top = temp;
+     }
+}

@@ -1,0 +1,24 @@
+void main()
+{
+ int r,c;
+ StackType s;
+
+ init(&s);
+ here = entry;
+ while ( maze[here.r][here.c]!='x' ){
+   r = here.r;
+   c = here.c;
+   maze[r][c] = '.';
+   push_loc(&s, r-1,c);
+   push_loc(&s, r+1,c);
+   push_loc(&s, r,c-1);
+   push_loc(&s, r,c+1);
+   if( is_empty(&s) ){
+      printf("failure\n");
+      return;
+   }
+   else 
+      here = pop(&s);
+   }
+   printf("success\n");
+}

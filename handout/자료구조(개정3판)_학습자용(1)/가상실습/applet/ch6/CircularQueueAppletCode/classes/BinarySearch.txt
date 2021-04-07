@@ -1,0 +1,7 @@
+void enqueue(QueueType *q, element item)
+{ 
+    if( is_full(q) ) 
+        error("queue is full");
+    q->rear = (q->rear+1) % MAX_QUEUE_SIZE;
+    q->queue[q->rear] = item;
+}

@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=MS949">
+<title>
+HTML Test Page
+</title>
+</head>
+<body>
+      <p align="center"><img src="images/SortApplet_html_smartbutton1.gif" namo_npi=":EmbededNPI1" border="0">
+<p><applet
+  codebase = "./"
+  code     = "SortApplet.class"
+  name     = "TestApplet"
+  width    = "700"
+  height   = "444"
+  hspace   = "0"
+  vspace   = "0"
+  align    = "middle"
+>
+</applet>
+</p>
+            <ul>
+                <li style="line-height:150%;">연결 리스트&nbsp;연산의 종류를 선택합니다. 
+    </li>
+    <li style="line-height:150%;">삽입할 숫자를 입력난에 입력한 다음, 삽입 버튼을 
+    누르면 삽입 연산이 수행됩니다.</li>
+    <li style="line-height:150%;">삭제 버튼을 누르면 삭제&nbsp;연산이 수행됩니다.</li>
+                <li style="line-height:150%;">&quot;숫자의 개수&quot; 버튼을 
+    클릭하여 알고리즘의 수행속도를 선택합니다.(숫자가 
+                높아질수록 속도가 빨라집니다.) 단계실행을 선택하면 버튼을 누를 
+                때마다 단계적으로 실행됩니다.</li>
+                <li style="line-height:150%;">&quot;숫자의 개수&quot; 버튼을 
+    클릭하여&nbsp;연결 리스트의 크기를  선택합니다. 
+                화면의 크기 제한으로 인하여 16까지로 제한됩니다.</li>
+                <li style="line-height:150%;">시작 버튼을 누르면 연결 리스트&nbsp;연산이 
+    시작됩니다.</li>
+                <li style="line-height:150%;">알고리즘 수행 도중에 수행 속도를 
+                다시 선택할 수 있습니다. </li>
+                <li style="line-height:150%;">알고리즘을 다시 수행시키고 싶을 
+                때는 정지 버튼을 누르고 다시 시작 버튼을 누르면 됩니다.</li>
+            </ul>
+</body>
+<!--Namo WebEditor Data 4.0
+:EmbededNPI1
+gQYAAHhevVQ9SxxRFD2TrFEwH6ISxUQZ0gVCPiAEIY1FCi2MStLYZZP9mMXsjLiPZO0mvcIm
+WIhYKKYIYQWVFCsIuwiLFlpESJcfYGkTkm5y7puZ3WSVBEbxwt139t05995335lJ2yoOwHh3
+ib+0p/GsYw7ZKjkVf6Uyb5L+bt0Omg3cQDPuor8xFOn/BbLMlJ24zXVRsLJyW01AlTjr9Nth
+DBhgh+IFRp7QPxnACDzPg6EfDIjft0sHJu5HauYsSFnnoW1OTac/MJkc7nTWUlI7X6rRz8MZ
+cYzsyFKTw2zn4unaIfsZLMQxiSRMPIiSLfGerB+6r0e2+TqTekwsff5l3gL29gvaHUOuHJij
+V3YLKBq8cFInVG7iJCr3hDbDNR3QHK7WbOZlTOr4tWICjpU9fiBdKpvK67O6JbokDa2er7al
+CW8Tub6glLxY4iyo7TN9lN5Lvwd01JP1hM8IqJDjtrPDANR2YnCvMdTLUABqO02oXGWoRYQn
+6XVRH/ghtEroOsEdCYXAbdO9MKEPmDAEA3y/XM8LdNPji0nl1diZiOk5ZZSHopQivrBaTLO8
+hX+KaW6oWw/hJFH9R0zyfaElbhXQxiF0/lqGjGZp5WdZq4dj4BJNTHkyrfr163wNimwUk9yD
+uP+Yjio7NS9/BsfL61urw3/kO1/YJWMKS34lGKePsNE+XMHhxs1tE0fVtaKJ4uZH/Y1+Ub38
+rbz5G+1UnK0=
+-->
+</html>

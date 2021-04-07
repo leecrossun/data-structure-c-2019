@@ -1,0 +1,45 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=MS949">
+<title>
+HTML Test Page
+</title>
+</head>
+<body>
+<p align="center"><img src="images/TreeAVL_html_smartbutton1.gif" namo_npi=":EmbededNPI1" border="0"></p>
+<p align="center">
+<applet
+  codebase = "./"
+  code     = "TreeAVL.class"
+  name     = "TestApplet"
+  width    = "500"
+  height   = "400"
+  hspace   = "0"
+  vspace   = "0"
+  align    = "top"
+>
+</applet>
+</p>
+            <ul>
+                <li style="line-height:150%;">&quot;초기화&quot; 버튼은 애플릿을 
+    초기화시킨다. 현재 입력된 노드들을 전부 지운다.</li>
+                <li style="line-height:150%;">&quot;삽입&quot; 버튼은 AVL 트리에 
+    숫자를 삽입할 때 사용된다. </li>
+    <li style="line-height:150%;">&quot;균형트리만들기&quot; 버튼은 트리가 비균형이 
+    되었을 때 트리를 균형 트리인 AVL트리로 만들 때 사용한다.</li>
+            </ul>
+</body>
+<!--Namo WebEditor Data 4.0
+:EmbededNPI1
+eQYAAHhevVTPaxNBGH1b0xqpaFFQqbQsvRUKVRAriBDBgwErYovQm7G7yYaaTZsMmoCH/QMM
+RNuDiAfBm9SD0EMKhQQhtAc9NOBB6L8hHtf3ze6m1RZLt8EPXubtfPP9mJk3ybkqA8CoDvCX
+dj9TKJppV9mlzLzKP7OD2V3rnDRwGecxgDN/u2J99zHKzLrWOMd3wpVTXusH2uSF4g038gEp
+diio03OHmDKAh/B9H4ZeGAbufGl0TFyJ1UwvggrFa65ZquZeM5ls7niWbKjNtXb8/fCMeIzs
+yFGL02znxPHaYfQMHGSwCBsmrsbJZr1i1E/d13XXfJrP3iSXPv8w/y2+fqtrFA25cmCFaG3V
+sWrwwhm6oMoLB4VyTsJecsyHYUscnVr+SULqBLUSQvaV3b8hXaqQrei9eg0it2fRbr7upA54
+bpVHw1LysAQsqO0j8YAYISbBp9S14WiNkBZjvHPsMCTdmQS8s3SN0BWS7kw/WnyVXlKEJ+l1
+0YAELgyK6wLJhLgi4g3pXpgwIEwYkRTfl+f7oW6GAzGpikr3REyzlFEFilKK+WC1mGq8hX+K
+aSV9SR/CQaI6REz8f9mxlmGN1XGPGV7Yy5Cjef/hV1Orh8fAIZ6YbjHSOZqY5B4EgXD1ppWb
+fSMfd+eanzc+Te/J93/pRZazopLbJHPED2IUp3Abj3h+jc7quonH7dPfm+u/AXgSl64=
+-->
+</html>

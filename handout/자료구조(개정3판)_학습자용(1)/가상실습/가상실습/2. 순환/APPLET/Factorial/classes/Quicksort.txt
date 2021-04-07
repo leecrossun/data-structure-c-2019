@@ -1,0 +1,14 @@
+int binary_search_recu(int key, int left, int right)
+{
+   int middle;
+   if(left<=right){
+      middle = (left+right)/2;
+      if(key==list[middle])
+           return middle;
+      else if(key<list[middle])
+           return binary_search(key, left, middle-1);
+      else
+           return binary_search(key, middle+1, right);
+   }
+   return -1;
+}

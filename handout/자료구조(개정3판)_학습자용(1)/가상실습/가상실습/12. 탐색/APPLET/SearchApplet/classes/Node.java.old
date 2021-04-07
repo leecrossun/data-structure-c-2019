@@ -1,0 +1,68 @@
+// Decompiled by Jad v1.5.7d. Copyright 2000 Pavel Kouznetsov.
+// Jad home page: http://www.geocities.com/SiliconValley/Bridge/8617/jad.html
+// Decompiler options: packimports(3)
+// Source File Name:   Node.java
+
+import java.awt.*;
+
+class Node extends Rectangle
+{
+
+    Node(int i, int j, int k)
+    {
+        selected = false;
+        decided = false;
+        base = false;
+        n = k;
+        reshape(i, j, 30, 25);
+        int r = 100 + (int)(Math.random() * 154D);
+    int g = 100 + (int)(Math.random() * 154D);
+    int b = 100 + (int)(Math.random() * 154D);
+    color = new Color(r,g, b);
+    font = new Font("Dialog", Font.ITALIC, 20);
+
+    }
+
+    void paint(Graphics g)
+    {
+        g.draw3DRect(x-1, y-1, width+1, height+1, true);
+        if(selected)
+            g.setColor(selectedColor);
+        else
+        if(base)
+            g.setColor(baseColor);
+        else
+        if(decided)
+            g.setColor(decidedColor);
+        else
+            g.setColor(color);
+        g.fill3DRect(x, y, width, height, true);
+        g.setColor(Color.black);
+
+        if(n < 10)
+            g.drawString("" + n, x + 8, (y + height) - 3);
+        else
+            g.drawString("" + n, x + 3, (y + height) - 3);
+    }
+
+    static final Color normalColor;
+    static final Color selectedColor;
+    static final Color baseColor;
+    static final Color decidedColor;
+    static final int defaultW = 25;
+    static final int defaultH = 20;
+    boolean selected;
+    boolean decided;
+    boolean base;
+    int n;
+    Color color;
+    Font font;
+
+    static
+    {
+        normalColor = Color.white;
+        selectedColor = Color.yellow;
+        baseColor = Color.orange;
+        decidedColor = Color.red;
+    }
+}

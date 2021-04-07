@@ -1,0 +1,17 @@
+void hash_lp_add( element item, element ht[] )
+{ 
+ int i, hash_value;
+ hash_value = i = hash_function( item.key );
+ while(!empty(ht[i])){
+  if(equal(item, ht[i])){
+   fprintf(stderr, "error\n");
+   return;
+  }
+  i = (i+1) % TABLE_SIZE;
+  if(i == hash_value){  
+   fprintf(stderr, "error\n");
+   return;
+  }
+ }
+ ht[i]=item;
+}

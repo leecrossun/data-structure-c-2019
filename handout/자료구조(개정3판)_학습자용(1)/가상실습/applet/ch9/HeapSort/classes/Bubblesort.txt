@@ -1,0 +1,30 @@
+void adjust(int heap[], int root, int n)
+{  
+   int child, temp;
+   temp = heap[root];				
+   child = 2*root;         		
+   while(child <= n){				
+      if(child<n && heap[child]<heap[child+1])
+         child++;
+      if(temp>heap[child])   
+	 break;
+      else						 
+         heap[child/2] = heap[child]; 
+      child = child*2;		    
+   }
+   heap[child/2] = temp;      
+}
+void heap_sort(int list[], int n)
+{  
+   int i, temp;
+   for(i=0;i<n; i++)		
+      heap[i+1]=list[i];
+   for(i=n/2; i>0; i--)		
+      adjust(heap, i, n);
+   for(i=n-1; i>0; i--){	
+      SWAP(heap[1], heap[i+1], temp);
+      adjust(heap, 1, i);   
+   }
+   for(i=0;i<n; i++)		
+      list[i]=heap[i+1];
+} 

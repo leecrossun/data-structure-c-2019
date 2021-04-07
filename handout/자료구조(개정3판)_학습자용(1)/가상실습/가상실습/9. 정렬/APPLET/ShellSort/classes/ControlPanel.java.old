@@ -1,0 +1,234 @@
+// Decompiled by Jad v1.5.7d. Copyright 2000 Pavel Kouznetsov.
+// Jad home page: http://www.geocities.com/SiliconValley/Bridge/8617/jad.html
+// Decompiler options: packimports(3)
+// Source File Name:   ControlPanel.java
+
+import java.awt.*;
+import java.util.*;
+
+class ControlPanel
+    extends Panel {
+
+  ControlPanel(RadixSort sortapplet) {
+    setBackground(Color.orange);
+    applet = sortapplet;
+    setLayout(new GridLayout(0, 4));
+    add(new Label("연산의 종류", 1));
+    add(new Label("수행속도", 1));
+    add(new Label("숫자들의 개수", 1));
+    add(new Label("직접입력값", 1));
+
+    speed = new Choice();
+    number = new Choice();
+    sortKind = new Choice();
+    sortKind.addItem("기수정렬");
+    //sortKind.addItem("탐색");
+    //sortKind.addItem("이중해싱");
+    speed.addItem("단계실행");
+    for (int i = 1; i <= 10; i++) {
+      speed.addItem(Integer.toString(i));
+    }
+    speed.select("3");
+    for (int j = 3; j < 17; j++) {
+      number.addItem(Integer.toString(j));
+    }
+    number.select("10");
+    tf = new TextField("1", 20);
+    add(sortKind);
+    add(speed);
+    add(number);
+    add(tf);
+    p1 = new Panel();
+    cl = new CardLayout();
+    p1.setLayout(cl);
+    add(startB = new Button("시작"));
+    add(new Button("중지"));
+    add(nextB = new Button("다음"));
+    nextB.disable();
+    add(new Button("입력"));
+    add(new Button("초기화"));
+    add(new Button("   "));
+    add(new Button("   "));
+    add(new Button("   "));
+    //add(new Label("Copyright (c)", 1));
+    //add(new Label("Soonchunhyang", 1));
+    //add(new Label("University", 1));
+    //add(new Label("2005", 1));
+
+    mb = new MessageBox();
+    //add(mb);
+  }
+
+  void ableGUI() {
+    sortKind.enable();
+    number.enable();
+  }
+
+  public boolean action(Event event, Object obj) {
+
+    if (event.target == sortKind) {
+      if (obj.equals("기수정렬")) {
+        applet.sv.setup(3);
+        byte0 = 0;
+        RadixSort.mode = "Bubblesort";
+      }
+      if (obj.equals("탐색")) {
+        applet.sv.setup(3);
+        byte0 = 1;
+        RadixSort.mode = "Insertionsort";
+      }
+      if (obj.equals("이중해싱")) {
+        applet.sv.setup(6);
+        byte0 = 2;
+        RadixSort.mode = "Quicksort";
+      }
+      if (obj.equals("선택정렬")) {
+        applet.sv.setup(5);
+        byte0 = 3;
+        RadixSort.mode = "Selectsort";
+      }
+      applet.sa.setData(byte0);
+      if (applet.fd.thread != null) {
+        startB.disable();
+      }
+      return true;
+    }
+    if (event.target == speed) {
+      if (obj.equals("단계실행")) {
+        RadixSort.isStep = true;
+        if (!RadixSort.isStop) {
+          RadixSort.isStop = true;
+        }
+        sortKind.disable();
+        number.disable();
+        startB.disable();
+        nextB.enable();
+      }
+      else {
+        RadixSort.isStep = false;
+        RadixSort.speed = 2 * Integer.parseInt(obj.toString());
+        startB.enable();
+        nextB.disable();
+      }
+      return true;
+    }
+    if (event.target == number) {
+      RadixSort.itemNumber = Integer.parseInt(obj.toString());
+      if (applet.fd.thread != null) {
+        startB.disable();
+      }
+      applet.fd.nodeArray.init(RadixSort.itemNumber);
+      applet.fd.repaint();
+      return true;
+    }
+    if (obj.equals("시작")) {
+      applet.fd.sort();
+      sortKind.disable();
+      number.disable();
+      return true;
+    }
+    if (obj.equals("중지")) {
+      applet.fd.stopThread();
+      ableGUI();
+      return true;
+    }
+    if (obj.equals("랜덤입력")) {
+      applet.fd.reload();
+      sortKind.disable();
+      number.disable();
+      startB.enable();
+      return true;
+    }
+    if (obj.equals("모든 정점 삭제")) {
+      //applet.fd.init(true);
+      //sortKind.disable();
+      number.disable();
+      startB.enable();
+      return true;
+    }
+    if (obj.equals("초기화")) {
+      applet.fd.reload();
+      //sortKind.disable();
+      number.disable();
+      startB.enable();
+      return true;
+    }
+
+    if (obj.equals("인접행렬")) {
+      if (display_weight_matrix == true) {
+        display_weight_matrix = false;
+      }
+      else {
+        display_weight_matrix = true;
+      }
+      applet.fd.repaint();
+      return true;
+    }
+
+    if (obj.equals("입력")) {
+      int v[] = new int[100];
+      String token = null;
+      int i = 0;
+      int n;
+
+      token = tf.getText();
+      StringTokenizer stoken = new StringTokenizer(token);
+      while (stoken.hasMoreTokens()) {
+        String s = stoken.nextToken(" ");
+        try {
+          n = Integer.parseInt(s);
+        }
+        catch (NumberFormatException _ex) {
+          n = 0;
+        }
+        v[i++] = n;
+      }
+      applet.itemNumber = i;
+      applet.fd.loadnum(v);
+      sortKind.disable();
+      number.disable();
+      startB.enable();
+      return true;
+    }
+    if (obj.equals("다음")) {
+      applet.fd.next();
+      sortKind.disable();
+      number.disable();
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  private RadixSort applet;
+  private Choice sortKind;
+  private Choice speed;
+  private Choice number;
+  private Button startB, nextB;
+  private TextField tx;
+  private CardLayout cl;
+  private Panel p1, p20;
+  MessageBox mb;
+  Checkbox cb1, cb2, cb3; //independent checkboxes
+  CheckboxGroup cbg;
+  boolean display_weight_matrix;
+  public byte byte0 = 0;
+
+  //TextArea ta;
+
+  public ControlPanel() {
+    try {
+      jbInit();
+    }
+    catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  private void jbInit() throws Exception {
+    this.setLayout(null);
+  }
+
+  TextField tf;
+}

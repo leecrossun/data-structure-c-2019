@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=MS949">
+<title>
+HTML Test Page
+</title>
+</head>
+<body>
+      <p align="center"><img src="images/SortApplet_html_smartbutton2.gif" namo_npi=":EmbededNPI1" border="0">&nbsp;<p><applet
+  codebase = "./"
+  code     = "SortApplet.class"
+  name     = "TestApplet"
+  width    = "705"
+  height   = "479"
+  hspace   = "0"
+  vspace   = "0"
+  align    = "middle"
+>
+</applet>
+</p>
+            <ul>
+                <li style="line-height:150%;">&quot;순회종류&quot;에서 순회의 종류를 선택합니다.</li>
+                <li style="line-height:150%;">수행속도를 선택합니다.(숫자가 
+                높아질수록 속도가 빨라집니다.) 단계실행을 선택하면 버튼을 누를 
+                때마다 단계적으로 실행됩니다.</li>
+                <li style="line-height:150%;">탐색에 사용할 숫자의 개수를 선택합니다. 
+                화면의 크기 제한으로 인하여 16까지로 제한됩니다.</li>
+                <li style="line-height:150%;">직접 배열에 숫자를 입력하고 싶은 
+                경우에는 &quot;숫자입력&quot; 버튼을 사용합니다. 숫자들을 스페이스가 분리하여 
+                입력합니다. </li>
+                <ul>
+                    <li style="line-height:150%;">예를 들면 12 23 34 45 56 67 
+                    등과 같이 입력합니다.</li>
+                </ul>
+                <li style="line-height:150%;">랜덤 입력 버튼을 누르면 난수 발생 
+                함수를 이용하여 숫자를 생성시켜 트리에 입력합니다.</li>
+                <li style="line-height:150%;">시작 버튼을 누르면 알고리즘이 
+                시작됩니다. 순회이 결과를 지울려면 &quot;중지&quot; 버튼을 누릅니다.</li>
+                <li style="line-height:150%;">알고리즘 수행 도중에 수행 속도를 
+                다시 선택할 수 있습니다. </li>
+                <li style="line-height:150%;">알고리즘을 다시 수행시키고 싶을 
+                때는 정지 버튼을 누르고 다시 시작 버튼을 누르면 됩니다.</li>
+            </ul>
+</body>
+<!--Namo WebEditor Data 4.0
+:EmbededNPI1
+eQYAAHhevVRNSxtRFD1TY7W0aGmhLbbK0J0gWEGk0I0LKWbhB7Qbd8bmY4JmRsyjxt38AIW0
+uBDposWd6KLgIkIhQQjtwi4asKv+AvfSRRfTc9/MJBpFYSJeOHkn7879ePedmYytEgCMldv8
+pU0mco4Zt1VqKfFOZd+n/N2G1ToMPEUHXjU7Iv6/xTgzbSf7uX4Srqz8XjtQJc85L+3QB4yy
+Q0GRnjHitQFMwfM8GPrBIPDPQalm4kXEdloPyznDtrm0kvnIVHK41qyzpL7vVaOfhzPiGNmR
+pRYn2E5ba+0w+g0sJLCIFEwMRcmW/MCoE93XiG0uZNMiJenzjHmbOPxZ1HAMuXJgnaj8KGLH
+4IUzdF7l5y8K5Z6ErXLNBGEOV2stOxeTOn6tmJBzZc8fSJfKpQv6rG6JkKShNfLVt3TAcjLf
+F5SSF0vAgtq2iWmilxgEHjaS9YTPCKkwxn3ADgNS34nB7aarl66A1HfaUemiq1OEJ+l1UZ/4
+LtwV1yOSAXGFxL2ve2FCnzBhSEb5frmeF+imxxeTKqj4tYjpLWVUgKKUIr6wWkxrvIVLxbQe
+f6KHcJGorhCTfF9oyefUHSc2/u8LZDSft/6WtXo4Bi6RxKS/YFbj+nW+JkU2i0nuQeA/pr3K
+Tm/In/GZ8tdvuxOn8t0sfSxjCkv+Ipkhjok+3EGptrNv4tnB6m8Ts9V7R+X9/6LTl+k=
+-->
+</html>

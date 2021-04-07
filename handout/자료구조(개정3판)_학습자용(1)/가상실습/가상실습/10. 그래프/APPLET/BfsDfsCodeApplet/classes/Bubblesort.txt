@@ -1,0 +1,9 @@
+void dfs_mat(int v)
+{
+   int w;
+   visited[v] = 1;		
+   printf("%d ", v);		
+   for(w=0; w<n; w++) 		
+         if( adj_mat[v][w] && !visited[w] )
+             dfs_mat(w);	
+}

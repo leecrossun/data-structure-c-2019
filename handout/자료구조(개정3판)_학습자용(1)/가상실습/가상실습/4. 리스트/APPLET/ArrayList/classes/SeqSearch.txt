@@ -1,0 +1,13 @@
+element delete(ArrayListType *L, int position)
+{
+  int i;
+  element item;
+
+  if( position < 0 || position >= L->length )
+    error("position error");
+  item = L->list[position];
+  for(i=position; i<(L->length-1);i++)
+    L->list[i] = L->list[i+1];
+  L->length--;
+  return item;
+}

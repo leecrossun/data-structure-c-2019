@@ -1,0 +1,18 @@
+void bfs_mat(int v)
+{  
+int w;
+QueueType q;
+init(&q);     
+visited[v] = TRUE;          
+printf("%d ", v);           
+enqueue(&q, v);			
+while(!is_empty(&q)){
+  v = dequeue(&q);		
+  for(w=0; w<n; w++)	
+    if(adj_mat[v][w] && !visited[w]){ 
+      visited[w] = TRUE;   
+      printf("%d ", w);   
+      enqueue(&q, w); 	
+    }
+  }
+}

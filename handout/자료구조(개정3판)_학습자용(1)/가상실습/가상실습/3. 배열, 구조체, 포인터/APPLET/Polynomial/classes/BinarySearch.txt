@@ -1,0 +1,24 @@
+poly_add2(int As, int Ae, int Bs, int Be, int *Cs, int *Ce)  // C=A+B
+{	
+ float tempcoef;
+ *Cs = avail;
+ while( As <= Ae && Bs <= Be )
+  switch(compare(terms[As].expon, term[Bs].expon){  
+    case '>': 	
+      attach(terms[As].coef, terms[As].expon);
+      As++;			break;
+    case '=': 	
+      tempcoef = terms[As].coef + terms[Bs].coef;
+      if( tempcoef ) 
+         attach(tempcoef,terms[As].expon);
+      As++; Bs++;		break;
+    case '<': 	
+      attach(terms[Bs].coef, terms[Bs].expon);
+      Bs++;			break;
+  }
+  for(;As<=Ae;As++)
+    attach(terms[As].coef, terms[As].expon);
+  for(;Bs<=Be;Bs++)
+    attach(terms[Bs].coef, terms[Bs].expon);
+  *Ce = avail -1;
+}

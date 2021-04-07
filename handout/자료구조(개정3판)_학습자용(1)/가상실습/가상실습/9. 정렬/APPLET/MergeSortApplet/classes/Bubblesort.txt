@@ -1,0 +1,32 @@
+void merge(int low, int mid, int high)
+{
+   int i, j, k, l;
+   i=low;  j=mid+1;  k=low;
+   while(i<=mid && j<=high){
+         if(list[i]<=list[j])
+            sorted[k] = list[i++];
+         else
+            sorted[k] = list[j++];
+         k++;
+   }
+   if(i>mid)
+          for(l=j; l<=high; l++)
+             sorted[k++] = list[l];
+   else
+          for(l=i; l<=mid; l++)
+             sorted[k++] = list[l];
+   for(l=low; l<=high; l++)
+      list[l] = sorted[l];
+}
+
+void merge_sort(int low, int high)
+{
+   int mid;
+   if(low<high){
+      mid = (low+high)/2;
+      merge_sort(low, mid);
+      merge_sort(mid+1, high);
+      merge(low, mid, high);
+   }
+}
+

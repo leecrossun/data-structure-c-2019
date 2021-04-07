@@ -1,0 +1,252 @@
+import java.awt.*;
+import java.util.*;
+
+class ControlPanel extends Panel
+{
+
+    ControlPanel(SearchApplet sortapplet)
+    {
+        setBackground(Color.orange);
+        applet = sortapplet;
+        setLayout(new GridLayout(4, 1));
+        Panel panel5 = new Panel();
+        Panel panel6 = new Panel();
+        p1 = new Panel();
+        Panel panel3 = new Panel();
+        Panel panel4 = new Panel();
+        Panel panel = new Panel();
+        Panel panel1 = new Panel();
+        Panel panel2 = new Panel();
+        cl = new CardLayout();
+        p1.setLayout(cl);
+        panel5.setLayout(new FlowLayout(0));
+        panel6.setLayout(new FlowLayout(0));
+        panel3.setLayout(new FlowLayout(0));
+        panel.setLayout(new BorderLayout());
+        panel1.setLayout(new BorderLayout());
+        panel2.setLayout(new BorderLayout());
+        panel4.setLayout(new FlowLayout(0));
+        startB = new Button("시작");
+        Button button = new Button("다음");
+        Button button1 = new Button("중지");
+        Button button2 = new Button("랜덤입력");
+        panel5.add(startB);
+        panel5.add(button1);
+        panel6.add(button);
+        p1.add("start", panel5);
+        p1.add("step", panel6);
+        sortKind = new Choice();
+        speed = new Choice();
+        number = new Choice();
+        sortKind.addItem("이진탐색");
+        sortKind.addItem("순차탐색");
+        speed.addItem("단계실행");
+        for(int i = 1; i <= 10; i++)
+            speed.addItem(Integer.toString(i));
+
+        speed.select("1");
+        for(int j = 3; j < 17; j++)
+            number.addItem(Integer.toString(j));
+
+        number.select("7");
+        Label label = new Label("탐색종류", 0);
+        Label label1 = new Label("수행속도", 0);
+        Label label2 = new Label("숫자의 개수", 0);
+        //label.setFont(font);
+        //label1.setFont(font);
+        //label2.setFont(font);
+        panel.add("North", label);
+        panel.add("Center", sortKind);
+        panel1.add("North", label1);
+        panel1.add("Center", speed);
+        panel2.add("North", label2);
+        panel2.add("Center", number);
+        panel3.add(panel);
+        panel3.add(panel1);
+        panel3.add(panel2);
+
+        //
+        Panel panel9 = new Panel();
+        panel9.setLayout(new FlowLayout(0));
+        Label label4 = new Label("탐색할 숫자:");
+        tf1 = new TextField("",5);
+        panel9.add("West", label4);
+        panel9.add("West", tf1);
+
+        //
+        Label label3 = new Label("배열숫자입력:");
+        mb = new MessageBox();
+        panel4.add("West", label3);
+        tf = new TextField("",15);
+        panel4.add("West", tf);
+        Button button4 = new Button("직접입력");
+        panel4.add("West", button4);
+        panel4.add("West", button2);
+        //panel4.add("Center", mb);
+        add(panel3);
+        add(p1);
+        add(panel9);
+        add(panel4);
+    }
+
+    void ableGUI()
+    {
+        sortKind.enable();
+        number.enable();
+    }
+
+    public boolean action(Event event, Object obj)
+    {
+        byte byte0 = 0;
+        if(event.target == sortKind)
+        {
+            if(obj.equals("이진탐색"))
+            {
+                applet.sv.setup(5);
+                byte0 = 0;
+                SearchApplet.mode = "Bubblesort";
+            }
+            if(obj.equals("순차탐색"))
+            {
+                applet.sv.setup(3);
+                byte0 = 1;
+                SearchApplet.mode = "Insertionsort";
+            }
+            if(obj.equals("순차탐색1"))
+            {
+                applet.sv.setup(3);
+                byte0 = 2;
+                SearchApplet.mode = "Quicksort";
+            }
+            if(obj.equals("선택정렬"))
+            {
+                applet.sv.setup(5);
+                byte0 = 3;
+                SearchApplet.mode = "Selectsort";
+            }
+            applet.sa.setData(byte0);
+            if(applet.fd.thread != null)
+                startB.disable();
+            return true;
+        }
+        if(event.target == speed)
+        {
+            if(obj.equals("단계실행"))
+            {
+                SearchApplet.isStep = true;
+                if(!SearchApplet.isStop)
+                    SearchApplet.isStop = true;
+                sortKind.disable();
+                number.disable();
+                cl.show(p1, "step");
+            } else
+            {
+                SearchApplet.isStep = false;
+                SearchApplet.speed = 2 * Integer.parseInt(obj.toString());
+                cl.show(p1, "start");
+            }
+            return true;
+        }
+        if(event.target == number)
+        {
+            SearchApplet.itemNumber = Integer.parseInt(obj.toString());
+            if(applet.fd.thread != null)
+                startB.disable();
+            applet.fd.nodeArray.init(SearchApplet.itemNumber);
+            applet.fd.repaint();
+            return true;
+        }
+        if(obj.equals("시작"))
+        {
+              try
+              {
+                applet.searchnum = Integer.parseInt(tf1.getText());
+              }
+              catch(NumberFormatException _ex)
+              {
+                applet.searchnum = 0;
+              }
+            applet.fd.sort();
+            sortKind.disable();
+            number.disable();
+            return true;
+        }
+        if(obj.equals("중지"))
+        {
+            applet.fd.stopThread();
+            ableGUI();
+            applet.fd.reset();
+            return true;
+        }
+        if(obj.equals("랜덤입력"))
+        {
+            applet.fd.reload();
+            sortKind.disable();
+            number.disable();
+            startB.enable();
+            return true;
+        }
+        if(obj.equals("직접입력"))
+        {
+            int v[] = new int[100];
+            String token = null;
+            int i=0;
+            int n;
+
+            token = tf.getText();
+            StringTokenizer stoken = new StringTokenizer(token);
+            while(stoken.hasMoreTokens()){
+              String s = stoken.nextToken(" ");
+              try
+              {
+                n = Integer.parseInt(s);
+              }
+              catch(NumberFormatException _ex)
+              {
+                n = 0;
+              }
+              v[i++] = n;
+            }
+            applet.itemNumber = i;
+            applet.fd.loadnum(v);
+            sortKind.disable();
+            number.disable();
+            startB.enable();
+            return true;
+        }
+        if(obj.equals("다음"))
+        {
+            applet.fd.next();
+            sortKind.disable();
+            number.disable();
+            return true;
+        } else
+        {
+            return false;
+        }
+    }
+
+    private SearchApplet applet;
+    private Choice sortKind;
+    private Choice speed;
+    private Choice number;
+    private Button startB;
+    private TextField tx;
+    private CardLayout cl;
+    private Panel p1;
+    MessageBox mb;
+
+  public ControlPanel() {
+    try {
+      jbInit();
+    }
+    catch(Exception e) {
+      e.printStackTrace();
+    }
+  }
+  private void jbInit() throws Exception {
+    //this.setLayout(null);
+  }
+  TextField tf;
+  TextField tf1;
+}

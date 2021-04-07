@@ -1,0 +1,8 @@
+void dinsert(struct list_node *x , struct   list_node *temp)
+{
+      temp->llink = x;         
+      temp->rlink = x->rlink;  
+      x->rlink->llink = temp;  
+      x->rlink = temp;         
+} 
+ 

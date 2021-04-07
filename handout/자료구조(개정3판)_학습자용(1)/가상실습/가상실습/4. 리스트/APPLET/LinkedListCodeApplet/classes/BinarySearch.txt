@@ -1,0 +1,18 @@
+insert_node(ListNode **phead, ListNode *p, int data)
+{
+        ListNode *temp; 
+        temp = (ListNode *)malloc(sizeof(ListNode)); 
+        temp->data = data; 
+        if( *phead == NULL ){	
+                new_node->link = NULL; 
+                *phead = new_node; 
+        }
+        else if( p == NULL ){ 
+                new_node->link = *phead;
+                *phead = new_node;
+        }
+        else {			 
+                new_node->link = p->link; 
+                p->link = new_node; 
+        }
+}

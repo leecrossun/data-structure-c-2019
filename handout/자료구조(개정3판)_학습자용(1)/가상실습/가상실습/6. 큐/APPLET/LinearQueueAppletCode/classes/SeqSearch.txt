@@ -1,0 +1,8 @@
+element delete(QueueType *q)
+{
+      if( q->front == q->rear ){
+         queue_empty();
+         return;
+      }
+      return q->queue[++(q->front)];
+}

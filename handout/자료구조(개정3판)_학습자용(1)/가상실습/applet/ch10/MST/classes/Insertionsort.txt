@@ -1,0 +1,22 @@
+void kruskal(int n)
+{
+ int edge_accepted=0;	
+ HeapType h;				
+ int uset, vset;			
+ element e;				
+	
+ init(&h);			
+ insert_edges(&h);		
+ set_init(n);				
+ while( edge_accepted < (n-1) )	
+ {
+   e = delete_min_heap(&h);	
+   uset = set_find(e.u);		
+   vset = set_find(e.v);		
+   if( uset != vset ){			
+      printf("(%d,%d) %d \n",e.u, e.v, e.key);
+      edge_accepted++;
+      set_union(uset, vset);	
+   }
+ }
+}

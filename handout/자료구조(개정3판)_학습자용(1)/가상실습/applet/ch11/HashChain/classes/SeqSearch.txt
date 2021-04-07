@@ -1,0 +1,13 @@
+vvoid hash_chain_find(element item, ListNode *ht[])
+{
+   ListNode *node;
+
+   int hash_value = hash_function(item.key);
+   for(node=ht[hash_value]; node; node=node->link){  
+      if(equal(node->item, item)){  
+         printf("success\n");
+         return;
+      }
+   }
+   printf("failure\n");
+}

@@ -1,0 +1,14 @@
+element pop(LinkedStackType *s) 
+{ 
+  if( is_empty(s) ) {
+    fprintf(stderr, "error\n");
+    exit(1);
+  }
+  else{
+    StackNode *temp=s->top;
+    int item = temp->item; 
+    s->top = s->top->link;
+    free(temp); 
+    return item;
+  }
+} 

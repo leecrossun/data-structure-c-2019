@@ -1,0 +1,8 @@
+delete(struct list_node *trail, struct list_node *node) 
+{
+          if( trail ) 
+                  trail->link = node->link; 
+          else 
+                  ptr = ptr->link; 
+          free(node);           
+}

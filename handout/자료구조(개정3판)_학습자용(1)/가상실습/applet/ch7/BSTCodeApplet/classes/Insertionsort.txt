@@ -1,0 +1,48 @@
+void delete_node(TreeNode **root, int key)
+{
+TreeNode *p, *child, *succ, *succ_p, *t;
+p = NULL;
+t = *root;
+while( t != NULL && t->key != key ){
+	p = t;
+	t = ( key < t->key ) ? t->left : t->right;
+}
+if( t == NULL ) { 	// 
+	printf("key is not in the tree");
+	return;
+}
+if( (t->left==NULL) && (t->right==NULL) ){ 
+	if( p != NULL ){
+		if( p->left == t )	 
+			p->left = NULL;
+		else   p->right = NULL;
+	}
+	else	// 
+		*root = NULL;
+}
+else if((t->left==NULL)||(t->right==NULL)){
+	child = (t->left != NULL) ? t->left : t->right;
+	if( p != NULL ){
+		if( p->left == t )	// 
+			p->left = child;
+		else p->right = child;
+	}
+	else   // 
+		*root = child;
+}
+else{		
+	succ_p = t;
+	succ = t->right;
+	while(succ->left != NULL){
+		succ_p = succ;
+		succ = succ->left;
+	}
+	if( succ_p->left == succ )
+		succ_p->left = succ->right;
+	else 
+		succ_p->right = succ->right;
+	t->key = succ->key;
+	t = succ;
+}
+free(t);
+} 

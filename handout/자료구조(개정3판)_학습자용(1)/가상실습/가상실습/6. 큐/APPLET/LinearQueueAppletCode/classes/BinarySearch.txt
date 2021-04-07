@@ -1,0 +1,9 @@
+add(QueueType *q, element item)
+{
+   if( is_full(q) )
+   {
+         error("queue is full");
+         return;
+   }
+   q->queue[++(q->rear)] = item;
+}

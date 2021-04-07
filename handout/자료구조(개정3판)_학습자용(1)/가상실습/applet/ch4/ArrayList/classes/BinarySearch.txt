@@ -1,0 +1,11 @@
+void add(ListType *L, int position, element item)
+{
+ if( !is_full(L) && (position >= 0) && 
+             (position <= L->length) ){
+     int i;
+     for(i=(L->length-1); i>=position;i--)
+        L->list[i+1] = L->list[i];
+     L->list[position] = item;
+     L->length++;
+ }
+}

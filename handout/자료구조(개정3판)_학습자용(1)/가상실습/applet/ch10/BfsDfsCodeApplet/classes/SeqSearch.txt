@@ -1,0 +1,7 @@
+void ddelete(struct list_node *head_node , struct list_node *x)
+{
+          if( x == head_node ) return;
+          x->llink->rlink = x->rlink; 
+          x->rlink->llink = x->llink; 
+          free(x);
+} 

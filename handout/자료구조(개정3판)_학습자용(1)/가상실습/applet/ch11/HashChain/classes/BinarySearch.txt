@@ -1,0 +1,21 @@
+void hash_chain_add(element item, ListNode *ht[])
+{
+  
+   int hash_value = hash_function(item.key);
+   ListNode *ptr; 			
+   ListNode *node_before=NULL;	
+   ListNode *node = ht[hash_value]; 
+   for(; node; node_before=node, node=node->link){  
+     if(equal(node->item, item)){  
+        fprintf(stderr,"duplicate key error\n");
+        return;
+     }
+   }
+   ptr = (ListNode *)malloc(sizeof(ListNode));
+   ptr->item = item;
+   ptr->link = NULL;
+   if(node_before)		
+     node_before->link = ptr;
+   else				
+     ht[hash_value] = ptr; 
+}

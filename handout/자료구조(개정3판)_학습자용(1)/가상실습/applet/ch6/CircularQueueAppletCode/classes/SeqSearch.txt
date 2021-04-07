@@ -1,0 +1,7 @@
+deqeueue(QueueType *q)
+{
+if( is_empty(q) )
+  error("empty");
+q->front = (q->front+1) % MAX_QUEUE_SIZE;
+return q->queue[q->front];
+}

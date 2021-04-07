@@ -1,0 +1,15 @@
+element dequeue(QueueType *q) 
+{ 
+ 	QueueNode *temp = front;
+ 	element item; 
+	if( is_empty(q) )			
+		error("empty queue");
+	else {
+		item = temp->item; 		
+		q->front = q->front->link; 
+		if( q->front == NULL ) 	
+			q->rear = NULL;
+		free(temp); 			
+		return item; 			
+	}
+} 
